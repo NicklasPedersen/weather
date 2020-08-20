@@ -1,0 +1,23 @@
+.radial-progress, .fill, .circle, .mask {
+    margin: 0;
+}
+.radial-progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.mask, .fill {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 1s;
+    backface-visibility: hidden;
+}
+.mask {
+    clip: rect(0px, 120px, 120px, 60px);
+}
+.fill {
+    clip: rect(0px, 60px, 120px, 0px);
+    background-color: #26d5ec;
+}

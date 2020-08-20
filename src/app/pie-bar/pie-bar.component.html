@@ -1,0 +1,11 @@
+<div class="radial-progress">
+    <div class="circle">
+        <div class="mask full" [style.transform]="'rotate(' + rotation * 1.8 + 'deg)'">
+            <div class="fill" [style.transform]="'rotate(' + rotation * 1.8 + 'deg)'"></div>
+        </div>
+        <div class="mask half">
+            <div class="fill" [style.transform]="'rotate(' + rotation * 1.8 + 'deg)'"></div>
+            <div class="fill fix" [style.transform]="'rotate(' + rotation * 3.6 + 'deg)'"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+*:not(img) {
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
