@@ -3,5 +3,8 @@
   <img src="{{ imgsrc }}">
   <h1>{{temp}}°C</h1>
 </div>
-<app-pie-bar [rotation]="clouds"></app-pie-bar>
+<div style="display: flex; align-items: center;">
+  <app-pie-bar [rotation]="clouds" [text]="'Cloudiness'" [color]="'grey'"></app-pie-bar>
+  <app-pie-bar [rotation]="data.main.humidity" [text]="'Humidity'" [color]="'lightblue'"></app-pie-bar>
+</div>
 <pre>{{pretty}}</pre>

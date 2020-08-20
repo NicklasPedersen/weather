@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { trigger, state, style, transition, animate, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-pie-bar',
@@ -9,6 +10,8 @@ export class PieBarComponent implements OnInit {
 
   constructor() { }
   @Input() rotation;
+  @Input() text;
+  @Input() color;
 
   ngOnInit(): void {
   }
