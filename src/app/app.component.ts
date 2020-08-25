@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { TestService } from './test.service';
-import { ImageService } from './image.service';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +12,10 @@ export class AppComponent {
   imgsrc;
   temp;
   weather;
-  pretty = null;
+  pretty;
   clouds;
-  constructor(private test: TestService, private image: ImageService) {
+  visibility;
+  constructor(private test: TestService) {
     test.getData(data => {
       this.data = data;
       this.pretty = JSON.stringify(data, null, 2);
@@ -23,7 +23,7 @@ export class AppComponent {
       this.temp = data.main.temp;
       this.weather = data.weather[0].main;
       this.clouds = data.clouds.all;
-      console.log(this.clouds);
+      this.visibility = data.visibility;
     });
   }
 }

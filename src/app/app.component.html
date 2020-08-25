@@ -1,10 +1,19 @@
-<div style="display: flex; align-items: center; text-align: center;">
-  <h1>{{weather}}</h1>
-  <img src="{{ imgsrc }}">
-  <h1>{{temp}}°C</h1>
+<div style="display: flex; align-items: center; text-align: center; width: auto; margin-left: auto; margin-right: auto; width: 80%;">
+  <h1>Ringsted</h1>
+  <div style="display: flex; align-items: center; width: auto;">
+    <img src="{{ imgsrc }}">
+    <h1>{{weather}}</h1>
+  </div>
+  <div>
+    <h1 style="width: auto;">{{temp}}°C</h1>
+  </div>
 </div>
+<h1>
+  Visibility: {{visibility}} meters
+</h1>
+<br>
+<br>
 <div style="display: flex; align-items: center;">
   <app-pie-bar [rotation]="clouds" [text]="'Cloudiness'" [color]="'grey'"></app-pie-bar>
   <app-pie-bar [rotation]="data.main.humidity" [text]="'Humidity'" [color]="'lightblue'"></app-pie-bar>
 </div>
-<pre>{{pretty}}</pre>

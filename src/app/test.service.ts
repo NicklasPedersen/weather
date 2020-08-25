@@ -5,19 +5,17 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TestService {
-  url = 'https://icanhazdadjoke.com/';
+  url = "http://api.openweathermap.org/data/2.5/weather?q=Ringsted,DK&appid=57e293daaeb80191eb3049b1bf3e5ee0&units=metric";
   constructor(private http: HttpClient) { }
   data;
-  getData(a) {
-    a(this.exampleData);
-    return;
+  getData(callback) {
     if (this.data) {
-      a(this.data);
+      callback(this.data);
       return;
     }
-    this.http.get(this.url, {headers: {'Accept': 'application/json'}}).subscribe(b => {
-      this.data = b;
-      a(b);
+    this.http.get(this.url).subscribe(data => {
+      this.data = data;
+      callback(data);
     });
   }
   exampleData = {"coord":{"lon":11.79,"lat":55.44},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":21.29,"feels_like":21.59,"temp_min":19,"temp_max":22.22,"pressure":1010,"humidity":60},"visibility":10000,"wind":{"speed":1,"deg":0},"clouds":{"all":46},"dt":1597826127,"sys":{"type":1,"id":9710,"country":"DK","sunrise":1597809253,"sunset":1597862334},"timezone":7200,"id":2614764,"name":"Ringsted","cod":200};
